@@ -1,6 +1,3 @@
- import { handle_request } from "./handler";
-self.addEventListener("fetch", (event)=>{
-    //fetch(event source).then(arrow function)
-}
-
-)
+self.addEventListener('fetch', event => {
+     const url = new URL(event.request.url); 
+     event.respondWith(new Response('shit from the porxy!1', { status: 200 })); }); 
