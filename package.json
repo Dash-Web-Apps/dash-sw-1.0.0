@@ -4,7 +4,7 @@
   "description": "Developent repo for unofficial changes made to Dash Proxies service worker and related functions",
   "main": "handler.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node src/server.mjs"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/stylo-codes-stuff/dash-sw-1.0.0/issues"
   },
-  "homepage": "https://github.com/stylo-codes-stuff/dash-sw-1.0.0#readme"
+  "homepage": "https://github.com/stylo-codes-stuff/dash-sw-1.0.0#readme",
+  "dependencies": {
+    "@tomphttp/bare-server-node": "^2.0.1"
+  }
 }
