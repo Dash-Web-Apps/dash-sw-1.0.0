@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-import http from "node:http";
+
+const http = require("node:http")
 import { createBareServer } from '@tomphttp/bare-server-node';
 
 const httpServer = http.createServer();

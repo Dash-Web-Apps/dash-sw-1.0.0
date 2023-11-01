@@ -4,7 +4,7 @@
   "description": "Developent repo for unofficial changes made to Dash Proxies service worker and related functions",
   "main": "handler.js",
   "scripts": {
-    "start": "node src/server.mjs"
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
