@@ -1,17 +1,25 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-import http from "node:http";
-import { createBareServer } from '@tomphttp/bare-server-node';
+const http = require("node:http");
+const {createBareServer} = require("@tomphttp/bare-server-node")
+const express = require("express")
+
 
 const httpServer = http.createServer();
 
-const bareServer = createBareServer('/');
+const app = express();
+app.use(express.static('static'));
+
+
+app.get('/', (req, res) => {
+	res.send('Hello, World!');
+});
+
+const bareServer = createBareServer('/bare/');
 
 httpServer.on('request', (req, res) => {
 	if (bareServer.shouldRoute(req)) {
 		bareServer.routeRequest(req, res);
 	} else {
-		res.writeHead(400);
-		res.end('Not found.');
+		app(req, res);
 	}
 });
 
@@ -30,9 +38,3 @@ httpServer.on('listening', () => {
 httpServer.listen({
 	port: 8080,
 });
-const myRequest = new Request("https://webscraper.io/test-sites/e-commerce/allinone");
-fetch(myRequest).then((response) => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-})
