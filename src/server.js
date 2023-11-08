@@ -1,8 +1,13 @@
 const http = require("node:http");
-const {createBareServer} = require("@tomphttp/bare-server-node")
 const express = require("express")
+const {createBareServer} = require("@tomphttp/bare-server-node")
 
-
+async function simpleFetch() {
+    const getRes = await fetch("http://replit.com");
+	const res = await getRes.text();
+	console.log(res)
+  }
+  
 const httpServer = http.createServer();
 
 const app = express();
@@ -32,9 +37,10 @@ httpServer.on('upgrade', (req, socket, head) => {
 });
 
 httpServer.on('listening', () => {
-	console.log('HTTP server listening');
+	console.log('Proxy online have fun browsing');
 });
 
 httpServer.listen({
 	port: 8080,
 });
+setTimeout(simpleFetch,3000);
