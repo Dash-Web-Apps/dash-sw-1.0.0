@@ -1,0 +1,44 @@
+body {
+    background-color: #0017ff;
+  }
+  #url_textbox {
+    font-family: Candal;
+    font-size: 20px;
+    width: 500px;
+    background-color: #ccff00;
+    border-color: #ccff00;
+    border-style: inset;
+    border-width: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+  }
+  #advanced_settings_checkbox {
+    outline: 3px solid #ccff00;
+    border-radius: 200px;
+  }
+  label {
+    font-family: Candal;
+    font-size: 20px;
+    align: center;
+  }
+  button {
+    border-color: #ccff00;
+    background-color: #ccff00;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    border-style: inset;
+    border-radius: 20px;
+  }
+  select {
+    position: relative;
+    display: inline-block;
+    padding-right: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+  }
+  

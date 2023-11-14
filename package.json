@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/stylo-codes-stuff/dash-sw-1.0.0#readme",
   "dependencies": {
-    "@tomphttp/bare-server-node": "^2.0.1"
+    "@tomphttp/bare-server-node": "^2.0.1",
+    "express": "^4.18.2"
   }
 }

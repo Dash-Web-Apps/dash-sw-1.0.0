@@ -1,17 +1,29 @@
+<<<<<<< HEAD
 
 const http = require("node:http")
 import { createBareServer } from '@tomphttp/bare-server-node';
+=======
+const http = require("node:http");
+const express = require("express")
+const {createBareServer} = require("@tomphttp/bare-server-node")
+>>>>>>> 462a1b22930b1918bcda0366f55061f900e10fe4
 
 const httpServer = http.createServer();
 
-const bareServer = createBareServer('/');
+const app = express();
+app.use(express.static(__dirname));
+
+app.get('/', (req, res) => {
+	res.send('Hello, World!');
+});
+
+const bareServer = createBareServer('/bare/');
 
 httpServer.on('request', (req, res) => {
 	if (bareServer.shouldRoute(req)) {
 		bareServer.routeRequest(req, res);
 	} else {
-		res.writeHead(400);
-		res.end('Not found.');
+		app(req, res);
 	}
 });
 
@@ -24,15 +36,9 @@ httpServer.on('upgrade', (req, socket, head) => {
 });
 
 httpServer.on('listening', () => {
-	console.log('HTTP server listening');
+	console.log('Proxy online have fun browsing');
 });
 
 httpServer.listen({
 	port: 8080,
 });
-const myRequest = new Request("https://webscraper.io/test-sites/e-commerce/allinone");
-fetch(myRequest).then((response) => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-})
