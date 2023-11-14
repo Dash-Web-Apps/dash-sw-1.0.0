@@ -1,3 +1,10 @@
+async function simpleFetch(url) {
+  const getRes = await fetch(url);
+  const res = await getRes.text();
+  setTimeout(3000);
+  return res;
+}
+
 function ShowAdvancedSettings() {
     const get_state = document.querySelector("#advanced_settings_checkbox");
     const state = get_state.checked;
@@ -36,7 +43,7 @@ function ShowAdvancedSettings() {
       get_country_option.remove();
     }
   }
-  function get_settings() {
+  async function get_settings() {
     const get_state = document.querySelector("#advanced_settings_checkbox");
     const state = get_state.checked;
     if (state == true) {
@@ -46,11 +53,9 @@ function ShowAdvancedSettings() {
       return [country, anonymity_level, url];
     }
     if (state == false) {
-      console.log(
-        "advanced settings disabled waiting to program default response"
-      );
+
       var url = document.getElementById("url_textbox").value;
-      return url;
+      simpleFetch(url)
     }
   }
   

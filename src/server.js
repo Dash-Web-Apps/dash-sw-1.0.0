@@ -2,17 +2,10 @@ const http = require("node:http");
 const express = require("express")
 const {createBareServer} = require("@tomphttp/bare-server-node")
 
-async function simpleFetch() {
-    const getRes = await fetch("http://replit.com");
-	const res = await getRes.text();
-	console.log(res)
-  }
-  
 const httpServer = http.createServer();
 
 const app = express();
-app.use(express.static('static'));
-
+app.use(express.static(__dirname));
 
 app.get('/', (req, res) => {
 	res.send('Hello, World!');
@@ -43,4 +36,3 @@ httpServer.on('listening', () => {
 httpServer.listen({
 	port: 8080,
 });
-setTimeout(simpleFetch,3000);
