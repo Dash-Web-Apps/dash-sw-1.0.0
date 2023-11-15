@@ -7,7 +7,6 @@ const httpServer = http.createServer();
 
 const app = express();
 app.use(express.static('static'));
-app.use(express.static('client'));
 
 
 
