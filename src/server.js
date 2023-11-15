@@ -1,21 +1,15 @@
-<<<<<<< HEAD
 
 const http = require("node:http")
-import { createBareServer } from '@tomphttp/bare-server-node';
-=======
-const http = require("node:http");
 const express = require("express")
 const {createBareServer} = require("@tomphttp/bare-server-node")
->>>>>>> 462a1b22930b1918bcda0366f55061f900e10fe4
 
 const httpServer = http.createServer();
 
 const app = express();
-app.use(express.static(__dirname));
+app.use(express.static('static'));
+app.use(express.static('client'));
 
-app.get('/', (req, res) => {
-	res.send('Hello, World!');
-});
+
 
 const bareServer = createBareServer('/bare/');
 
