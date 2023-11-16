@@ -5,7 +5,7 @@ const {createBareServer} = require("@tomphttp/bare-server-node")
 const httpServer = http.createServer();
 
 const app = express();
-app.use(express.static(__dirname));
+app.use(express.static('static'));
 
 app.get('/', (req, res) => {
 	res.send('Hello, World!');
