@@ -1,29 +1,5 @@
 {
-  "name": "dash-sw-1.0.0",
-  "version": "1.0.0",
-  "description": "Developent repo for unofficial changes made to Dash Proxies service worker and related functions",
-  "main": "handler.js",
-  "scripts": {
-    "start": "node src/server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/stylo-codes-stuff/dash-sw-1.0.0.git"
-  },
-  "keywords": [
-    "tomp",
-    "bare",
-    "server",
-    "proxy"
-  ],
-  "author": "stylo-codes-stuff",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/stylo-codes-stuff/dash-sw-1.0.0/issues"
-  },
-  "homepage": "https://github.com/stylo-codes-stuff/dash-sw-1.0.0#readme",
   "dependencies": {
-    "@tomphttp/bare-server-node": "^2.0.1",
-    "express": "^4.18.2"
+    "@angular/core": "^17.0.5"
   }
 }
