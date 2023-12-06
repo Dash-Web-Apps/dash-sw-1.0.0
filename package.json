@@ -1,7 +1,5 @@
 {
   "dependencies": {
-    "@angular/common": "^17.0.5",
-    "@angular/core": "^17.0.5",
-    "@angular/platform-browser": "^17.0.5"
+    "@angular/core": "^17.0.5"
   }
 }
